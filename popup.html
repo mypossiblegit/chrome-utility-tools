@@ -4,18 +4,85 @@
     <title>Chrome Utility Tools</title>
     <style>
       body {
-        width: 200px;
-        padding: 10px;
-        font-family: sans-serif;
+        width: 250px;
+        padding: 15px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
       }
       h1 {
-        font-size: 16px;
+        font-size: 18px;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 5px;
+      }
+      .feature-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 8px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      }
+      .feature-info {
+        flex-grow: 1;
+      }
+      .feature-name {
+        font-weight: bold;
+        font-size: 14px;
+      }
+      .feature-desc {
+        font-size: 11px;
+        color: #666;
+      }
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 34px;
+        height: 20px;
+      }
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: .4s;
+        border-radius: 20px;
+      }
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 14px;
+        width: 14px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: .4s;
+        border-radius: 50%;
+      }
+      input:checked + .slider {
+        background-color: #007bff;
+      }
+      input:checked + .slider:before {
+        transform: translateX(14px);
       }
     </style>
   </head>
   <body>
     <h1>Utility Tools</h1>
-    <p>This is a minimal Chrome extension.</p>
+    <div id="feature-list">
+      <!-- Features will be injected here -->
+    </div>
     <script src="popup.js"></script>
   </body>
 </html>

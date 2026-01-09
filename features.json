@@ -1,0 +1,11 @@
+{
+  "features": [
+    {
+      "id": "sample_feature",
+      "name": "Sample Feature",
+      "description": "A demonstration of the modular system.",
+      "enabled": true,
+      "script": "features/sample_feature.js"
+    }
+  ]
+}
