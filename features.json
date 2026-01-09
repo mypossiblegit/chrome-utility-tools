@@ -5,7 +5,7 @@
       "name": "Fandom English Force",
       "description": "Automatically redirects non-English Fandom wiki pages to the English version.",
       "enabled": true,
-      "script": "features/fandom_english_force.js"
+      "type": "background"
     }
   ]
 }
