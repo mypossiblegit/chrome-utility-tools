@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome Utility Tools",
+  "version": "1.0",
+  "description": "A minimal working Chrome extension structure.",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": []
+}
