@@ -1,11 +1,11 @@
 {
   "features": [
     {
-      "id": "sample_feature",
-      "name": "Sample Feature",
-      "description": "A demonstration of the modular system.",
+      "id": "fandom_english_force",
+      "name": "Fandom English Force",
+      "description": "Automatically redirects non-English Fandom wiki pages to the English version.",
       "enabled": true,
-      "script": "features/sample_feature.js"
+      "script": "features/fandom_english_force.js"
     }
   ]
 }
