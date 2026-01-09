@@ -1,11 +1,16 @@
 (function() {
   const currentUrl = window.location.href;
-  // Regex to match fandom.com/XX/wiki where XX is any language code
-  const fandomRegex = /fandom\.com\/([a-z]{2,3})\/wiki/i;
+  // Improved regex to match subdomains and any language code in the path
+  // Matches: https://anything.fandom.com/XX/wiki/...
+  const fandomRegex = /^(https?:\/\/[^/]+\.fandom\.com)\/([a-z]{2,3})\/wiki\/(.*)$/i;
   
-  if (fandomRegex.test(currentUrl)) {
-    const newUrl = currentUrl.replace(fandomRegex, 'fandom.com/wiki');
-    console.log(`Redirecting from ${currentUrl} to ${newUrl}`);
+  const match = currentUrl.match(fandomRegex);
+  if (match) {
+    const baseUrl = match[1];
+    const pagePath = match[3];
+    const newUrl = `${baseUrl}/wiki/${pagePath}`;
+    
+    console.log(`[Fandom English Force] Redirecting from ${currentUrl} to ${newUrl}`);
     window.location.replace(newUrl);
   }
 })();
