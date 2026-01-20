@@ -35,6 +35,23 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
           
           console.log(`[Fandom English Force] Redirecting to ${newUrl}`);
           chrome.tabs.update(tabId, { url: newUrl });
+          return; // Stop further processing for this URL update
+        }
+      }
+
+      // Google Comma to Dot logic
+      if (states['google_comma_to_dot']) {
+        const googleUrl = new URL(url);
+        if (googleUrl.hostname.includes('google.com') && googleUrl.pathname === '/search') {
+          const query = googleUrl.searchParams.get('q');
+          if (query && query.includes(',')) {
+            const newQuery = query.replace(/,/g, '.');
+            googleUrl.searchParams.set('q', newQuery);
+            const newUrl = googleUrl.toString();
+            
+            console.log(`[Google Comma to Dot] Redirecting to ${newUrl}`);
+            chrome.tabs.update(tabId, { url: newUrl });
+          }
         }
       }
     });

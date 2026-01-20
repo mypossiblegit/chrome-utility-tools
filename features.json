@@ -6,6 +6,13 @@
       "description": "Automatically redirects non-English Fandom wiki pages to the English version.",
       "enabled": true,
       "type": "background"
+    },
+    {
+      "id": "google_comma_to_dot",
+      "name": "Google Comma to Dot",
+      "description": "Replaces commas with dots in Google search queries (useful for math).",
+      "enabled": true,
+      "type": "background"
     }
   ]
 }
