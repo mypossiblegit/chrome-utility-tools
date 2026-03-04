@@ -54,6 +54,24 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
           }
         }
       }
+
+      // Reddit tl parameter cleaner
+      if (states['reddit_strip_tl']) {
+        try {
+          const redditUrl = new URL(url);
+          // only process reddit domains (including subdomains)
+          if (redditUrl.hostname.endsWith('reddit.com') && redditUrl.searchParams.has('tl')) {
+            redditUrl.searchParams.delete('tl');
+            const cleanUrl = redditUrl.toString();
+            if (cleanUrl !== url) {
+              console.log(`[Reddit tl Cleaner] Redirecting to ${cleanUrl}`);
+              chrome.tabs.update(tabId, { url: cleanUrl });
+            }
+          }
+        } catch (e) {
+          // malformed URL, ignore
+        }
+      }
     });
   }
 });

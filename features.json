@@ -13,6 +13,13 @@
       "description": "Replaces commas with dots in Google search queries (useful for math).",
       "enabled": true,
       "type": "background"
+    },
+    {
+      "id": "reddit_strip_tl",
+      "name": "Reddit tl Parameter Cleaner",
+      "description": "Removes any `tl` query parameter from Reddit URLs to avoid unwanted translation tags.",
+      "enabled": true,
+      "type": "background"
     }
   ]
 }

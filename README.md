@@ -14,6 +14,11 @@ Automatically corrects mathematical queries in Google Search by replacing commas
 - **How it works**: Monitors Google Search URLs and replaces commas (`%2C`) with dots (`.`) in the search query parameter.
 - **Benefit**: Perfect for users who frequently perform calculations or search for coordinates where a comma might break the search engine's interpretation.
 
+### 3. Reddit tl Parameter Cleaner
+Strips the `tl` query parameter (used for translation links) from Reddit URLs.
+- **How it works**: Detects any `tl` parameter on pages hosted under `*.reddit.com` and immediately redirects to the same URL without that parameter.
+- **Benefit**: Avoids unwanted automatic translation overlays or unwanted query string noise when browsing Reddit links.
+
 ## 🛠 Modular Architecture
 
 This extension is designed for growth. All features are managed through a central configuration, making it easy to add new tools without cluttering the codebase.
